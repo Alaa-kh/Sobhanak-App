@@ -8,11 +8,12 @@ class HomeModel {
 }
 
 List<HomeModel> homeModelList = [
+  HomeModel('داكن', Icon(Icons.dark_mode)),
+  HomeModel('الاهتزاز',
+      Icon(Icons.vibration)),
   HomeModel('تصفير',
-      Icon(Icons.settings_backup_restore_outlined, color: Colors.white)),
+      Icon(Icons.settings_backup_restore_outlined)),
   HomeModel('تصفير',
-      Icon(Icons.settings_backup_restore_outlined, color: Colors.white)),
-  HomeModel('تصفير',
-      Icon(Icons.settings_backup_restore_outlined, color: Colors.white)),
-  HomeModel('أذكارك', Icon(Icons.note_add, color: Colors.white)),
+      Icon(Icons.settings_backup_restore_outlined)),
+  HomeModel('أذكارك', Icon(Icons.note_add)),
 ];

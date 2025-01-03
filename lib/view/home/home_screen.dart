@@ -11,15 +11,20 @@ class HomeScreen extends StatelessWidget {
     final HomeControllerImp controller = Get.put(HomeControllerImp());
     return Scaffold(
         body: GestureDetector(
-            onTap: () => controller.add(),
+            onTap: () {
+              controller.add();
+            },
             child: Stack(children: [
-              Container(
-                  decoration: const BoxDecoration(
+          Obx(()=>    Container(
+                  decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.fill,
-                          image: AssetImage(
-                              'assets/images/kate-mishchankova-Gb_fZjvaLxw-unsplash.jpg'))),
-                  width: double.infinity),
+                          image: controller.isLightTheme.value
+                              ? AssetImage(
+                                  'assets/images/luciano-zorro-xUbbrCLt9NY-unsplash.jpg')
+                              : AssetImage(
+                                  'assets/images/kate-mishchankova-Gb_fZjvaLxw-unsplash.jpg'))),
+                  width: double.infinity)),
               Container(
                   color: Colors.black.withOpacity(0.3),
                   width: double.infinity,
