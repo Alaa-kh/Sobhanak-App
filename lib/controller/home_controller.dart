@@ -249,10 +249,8 @@ class HomeControllerImp extends HomeController {
     final Uri emailUri = Uri(
       scheme: 'mailto',
       path: 'alaakhaled22001@gmail.com',
-      queryParameters: {
-        'subject': 'تواصل مع الدعم',
-        'body': "مرحبًا، أريد التواصل بشأن..."
-      },
+      query:  
+      'subject=${Uri.encodeComponent('تواصل مع الدعم')}&body=${Uri.encodeComponent('مرحبًا، أريد التواصل بشأن..')}'
     );
 
     if (await canLaunchUrl(emailUri)) {
