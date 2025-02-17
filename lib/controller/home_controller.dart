@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:just_audio/just_audio.dart';
@@ -16,7 +15,6 @@ abstract class HomeController extends GetxController {
 class HomeControllerImp extends HomeController {
   RxBool isPlaying = false.obs;
   RxBool isSoundEnabled = false.obs;
-  RxBool isVibrationEnabled = false.obs;
   RxBool showSidebar = false.obs;
 
   RxMap<String, int> athkarCounts = <String, int>{}.obs;
@@ -189,9 +187,6 @@ class HomeControllerImp extends HomeController {
       } catch (e) {
         print('خطأ أثناء تشغيل الصوت: $e');
       }
-    }
-    if (isVibrationEnabled.value) {
-      HapticFeedback.vibrate();
     }
   }
 
